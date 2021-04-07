@@ -21,38 +21,30 @@ export type ErrorBoundaryFallbackProps = {
   resetErrorBoundary: () => void;
 };
 
-declare function FallbackRender(
-  props: ErrorBoundaryFallbackProps,
-): React.ReactElement<
-  unknown,
-  string | React.FunctionComponent | typeof React.Component
-> | null;
+type FallbackRender = React.FunctionComponent<ErrorBoundaryFallbackProps>;
 
-type ErrorBoundaryProps = {
-  fallbackRender: typeof FallbackRender;
+type Props = {
+  fallbackRender: FallbackRender;
 };
 
-type State = { error: Error | null };
+type State = { error?: Error };
 
-export class ErrorBoundary extends React.Component<
-  React.PropsWithRef<React.PropsWithChildren<ErrorBoundaryProps>>,
-  State
-> {
+export class ErrorBoundary extends React.Component<Props, State> {
   static getDerivedStateFromError(error: Error) {
     return { error };
   }
 
-  state: State = { error: null };
+  state: State = { error: undefined };
 
   resetErrorBoundary = () => {
-    this.setState({ error: null });
+    this.setState({ error: undefined });
   };
 
   render() {
     const { error } = this.state;
     const { fallbackRender } = this.props;
 
-    if (error !== null) {
+    if (error) {
       return fallbackRender({
         error,
         resetErrorBoundary: this.resetErrorBoundary,

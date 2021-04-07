@@ -16,6 +16,7 @@
 
 import { ResponseError } from '@backstage/errors';
 import {
+  Button,
   Divider,
   List,
   ListItem,
@@ -45,6 +46,7 @@ type ResponseErrorListProps = {
   request?: string;
   stack?: string;
   json?: string;
+  actions?: React.ReactNode;
 };
 
 const ResponseErrorList = ({
@@ -53,6 +55,7 @@ const ResponseErrorList = ({
   message,
   stack,
   json,
+  actions,
 }: ResponseErrorListProps) => {
   const classes = useStyles();
 
@@ -107,12 +110,21 @@ const ResponseErrorList = ({
           </ListItem>
         </>
       )}
+      {actions && (
+        <>
+          <Divider component="li" className={classes.divider} />
+          <ListItem alignItems="flex-start">{actions}</ListItem>
+        </>
+      )}
     </List>
   );
 };
 
 type Props = {
   error: Error;
+  defaultExpanded?: boolean;
+  title?: string;
+  actions?: React.ReactNode;
 };
 
 /**
@@ -121,13 +133,14 @@ type Props = {
  * Has special treatment for ResponseError errors, to display rich
  * server-provided information about what happened.
  */
-export const ResponseErrorDetails = ({ error }: Props) => {
+export const ResponseErrorDetails = ({ error, actions }: Props) => {
   if (error.name !== 'ResponseError') {
     return (
       <ResponseErrorList
         error={error.name}
         message={error.message}
         stack={error.stack}
+        actions={actions}
       />
     );
   }
@@ -158,10 +171,18 @@ export const ResponseErrorDetails = ({ error }: Props) => {
  * Has special treatment for ResponseError errors, to display rich
  * server-provided information about what happened.
  */
-export const ResponseErrorPanel = ({ error }: Props) => {
+export const ResponseErrorPanel = ({
+  title,
+  error,
+  defaultExpanded,
+  actions,
+}: Props) => {
   return (
-    <WarningPanel title={error.message}>
-      <ResponseErrorDetails error={error} />
+    <WarningPanel
+      title={title ?? error.message}
+      defaultExpanded={defaultExpanded}
+    >
+      <ResponseErrorDetails error={error} actions={actions} />
     </WarningPanel>
   );
 };

@@ -16,18 +16,26 @@
 
 // TODO align this design with the backend errors
 
-import { AppComponents } from '../..';
 import React from 'react';
+import { AppComponents } from '../..';
+import { ResponseErrorPanel } from '../ResponseErrorPanel';
+import { Button } from '@material-ui/core';
 
 export const ErrorBoundaryFallback: AppComponents['ErrorBoundaryFallback'] = ({
   error,
   resetErrorBoundary,
+  plugin,
 }) => {
   return (
-    <div role="alert">
-      <p>Something went wrong [DEFAULT]:</p>
-      <pre>{error.message}</pre>
-      <button onClick={resetErrorBoundary}>Try again</button>
-    </div>
+    <ResponseErrorPanel
+      title={`Error in ${plugin.getId()}`}
+      defaultExpanded
+      error={error}
+      actions={
+        <Button variant="text" onClick={resetErrorBoundary}>
+          Retry
+        </Button>
+      }
+    />
   );
 };
