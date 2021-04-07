@@ -15,5 +15,3 @@
  */
 
 export { ErrorBoundaryFallback } from './ErrorBoundaryFallback';
-export { ErrorBoundary } from './ErrorBoundary';
-export type { ErrorBoundaryFallbackProps } from './ErrorBoundary';
