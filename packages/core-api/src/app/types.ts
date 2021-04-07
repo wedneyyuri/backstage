@@ -22,6 +22,7 @@ import { AnyApiFactory } from '../apis';
 import { AppTheme, ProfileInfo } from '../apis/definitions';
 import { AppConfig } from '@backstage/config';
 import { SubRouteRef } from '../routing/types';
+import { ErrorBoundaryFallbackProps } from '@backstage/core';
 
 export type BootErrorPageProps = {
   step: 'load-config';
@@ -59,6 +60,11 @@ export type AppComponents = {
   BootErrorPage: ComponentType<BootErrorPageProps>;
   Progress: ComponentType<{}>;
   Router: ComponentType<{}>;
+  ErrorBoundaryFallback: ComponentType<
+    ErrorBoundaryFallbackProps & {
+      plugin: BackstagePlugin;
+    }
+  >;
 
   /**
    * An optional sign-in page that will be rendered instead of the AppRouter at startup.

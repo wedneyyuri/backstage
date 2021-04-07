@@ -18,6 +18,11 @@ import React, { lazy, Suspense } from 'react';
 import { RouteRef, useRouteRef } from '../routing';
 import { attachComponentData } from './componentData';
 import { Extension, BackstagePlugin } from '../plugin/types';
+import {
+  useApp,
+  ErrorBoundary,
+  ErrorBoundaryFallbackProps,
+} from '@backstage/core';
 
 type ComponentLoader<T> =
   | {
@@ -108,11 +113,29 @@ export function createReactExtension<
 
   return {
     expose(plugin: BackstagePlugin<any, any>) {
-      const Result: any = (props: any) => (
-        <Suspense fallback="...">
-          <Component {...props} />
-        </Suspense>
-      );
+      const Result: any = (props: any) => {
+        const app = useApp();
+        const { ErrorBoundaryFallback } = app.getComponents();
+
+        return (
+          <Suspense fallback="...">
+            {/* <pre>{JSON.stringify(plugin, null, 2)}</pre> */}
+            <ErrorBoundary
+              fallbackRender={({ error, resetErrorBoundary }) => {
+                return (
+                  <ErrorBoundaryFallback
+                    error={error}
+                    resetErrorBoundary={resetErrorBoundary}
+                    plugin={plugin}
+                  />
+                );
+              }}
+            >
+              <Component {...props} />
+            </ErrorBoundary>
+          </Suspense>
+        );
+      };
 
       attachComponentData(Result, 'core.plugin', plugin);
       for (const [key, value] of Object.entries(data)) {
