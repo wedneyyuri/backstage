@@ -18,11 +18,8 @@ import React, { lazy, Suspense } from 'react';
 import { RouteRef, useRouteRef } from '../routing';
 import { attachComponentData } from './componentData';
 import { Extension, BackstagePlugin } from '../plugin/types';
-import {
-  useApp,
-  ErrorBoundary,
-  ErrorBoundaryFallbackProps,
-} from '@backstage/core';
+import { ErrorBoundary } from './ErrorBoundary';
+import { useApp } from '../app/AppContext';
 
 type ComponentLoader<T> =
   | {
@@ -119,7 +116,6 @@ export function createReactExtension<
 
         return (
           <Suspense fallback="...">
-            {/* <pre>{JSON.stringify(plugin, null, 2)}</pre> */}
             <ErrorBoundary
               fallbackRender={({ error, resetErrorBoundary }) => {
                 return (
