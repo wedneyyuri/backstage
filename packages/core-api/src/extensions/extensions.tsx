@@ -20,7 +20,6 @@ import { BackstagePlugin, Extension } from '../plugin/types';
 import { RouteRef, useRouteRef } from '../routing';
 import { attachComponentData } from './componentData';
 import { ErrorBoundary } from './ErrorBoundary';
-import { useApp } from '../app/AppContext';
 
 type ComponentLoader<T> =
   | {
