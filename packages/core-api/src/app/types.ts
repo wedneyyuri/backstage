@@ -25,7 +25,7 @@ import { SubRouteRef } from '../routing/types';
 import { ErrorBoundaryFallbackProps } from '@backstage/core';
 
 export type BootErrorPageProps = {
-  step: 'load-config';
+  step: 'load-config' | 'load-chunk';
   error: Error;
 };
 
