@@ -32,7 +32,7 @@ export const ErrorBoundaryFallback: AppComponents['ErrorBoundaryFallback'] = ({
       defaultExpanded
       error={error}
       actions={
-        <Button variant="text" onClick={resetErrorBoundary}>
+        <Button variant="outlined" onClick={resetErrorBoundary}>
           Retry
         </Button>
       }
