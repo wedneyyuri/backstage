@@ -30,4 +30,4 @@ The props here include:
 
 - `error`. An Error object or something that inherits it that represents the error that was thrown from any inner component.
 - `resetErrorBoundary`. A callback that will simply mount the children of the error boundary again.
-- `plugin`. A BackstagePlugin that can be used to lookup info to be presented in the error message. For instance, you may want to keep a map of your internal plugins and team names or slack channels and present these when an error occurts. Typicicall, you'll do that by getting the plugin id with `plugin.getId()`.
+- `plugin`. A BackstagePlugin that can be used to lookup info to be presented in the error message. For instance, you may want to keep a map of your internal plugins and team names or slack channels and present these when an error occurs. Typically, you'll do that by getting the plugin id with `plugin.getId()`.
