@@ -16,7 +16,6 @@
 
 import { ResponseError } from '@backstage/errors';
 import {
-  Button,
   Divider,
   List,
   ListItem,
