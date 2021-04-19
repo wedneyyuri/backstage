@@ -52,6 +52,7 @@ export interface CatalogApi {
   getAttachment(
     name: EntityName,
     key: string,
+    options?: CatalogRequestOptions,
   ): Promise<CatalogAttachmentResponse>;
   getAttachmentUrl(name: EntityName, key: string): Promise<string>;
 
