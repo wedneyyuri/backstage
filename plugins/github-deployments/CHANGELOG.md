@@ -1,5 +1,16 @@
 # @backstage/plugin-github-deployments
 
+## 0.1.3
+
+### Patch Changes
+
+- 60d0a1a2e: Adds extraColumns field to GitHub Deployments card
+- Updated dependencies [99fbef232]
+- Updated dependencies [ab07d77f6]
+- Updated dependencies [937ed39ce]
+- Updated dependencies [9a9e7a42f]
+  - @backstage/core@0.7.6
+
 ## 0.1.2
 
 ### Patch Changes

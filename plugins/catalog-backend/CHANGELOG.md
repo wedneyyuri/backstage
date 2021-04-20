@@ -1,5 +1,46 @@
 # @backstage/plugin-catalog-backend
 
+## 0.7.2
+
+### Patch Changes
+
+- 09b5fcf2e: GithubDiscoveryProcessor now excludes archived repositories so they won't be added to Backstage.
+- c2306f898: Externalize repository processing for BitbucketDiscoveryProcessor.
+
+  Add an extension point where you can customize how a matched Bitbucket repository should
+  be processed. This can for example be used if you want to generate the catalog-info.yaml
+  automatically based on other files in a repository, while taking advantage of the
+  build-in repository crawling functionality.
+
+  `BitbucketDiscoveryProcessor.fromConfig` now takes an optional parameter `options.parser` where
+  you can customize the logic for each repository found. The default parser has the same
+  behaviour as before, where it emits an optional location for the matched repository
+  and lets the other processors take care of further processing.
+
+  ```typescript
+  const customRepositoryParser: BitbucketRepositoryParser = async function* customRepositoryParser({
+    client,
+    repository,
+  }) {
+    // Custom logic for interpret the matching repository.
+    // See defaultRepositoryParser for an example
+  };
+
+  const processor = BitbucketDiscoveryProcessor.fromConfig(env.config, {
+    parser: customRepositoryParser,
+    logger: env.logger,
+  });
+  ```
+
+- Updated dependencies [99fbef232]
+- Updated dependencies [ab07d77f6]
+- Updated dependencies [d367f63b5]
+- Updated dependencies [937ed39ce]
+- Updated dependencies [b42531cfe]
+- Updated dependencies [9a9e7a42f]
+  - @backstage/core@0.7.6
+  - @backstage/backend-common@0.6.3
+
 ## 0.7.1
 
 ### Patch Changes

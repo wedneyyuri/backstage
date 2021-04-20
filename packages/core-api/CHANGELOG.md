@@ -1,5 +1,11 @@
 # @backstage/core-api
 
+## 0.2.17
+
+### Patch Changes
+
+- ab07d77f6: Add support for discovering plugins through the app element tree, removing the need to register them explicitly.
+
 ## 0.2.16
 
 ### Patch Changes

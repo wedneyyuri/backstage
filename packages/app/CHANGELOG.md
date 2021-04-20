@@ -1,5 +1,26 @@
 # example-app
 
+## 0.2.25
+
+### Patch Changes
+
+- Updated dependencies [4e5c94249]
+- Updated dependencies [99fbef232]
+- Updated dependencies [cb0206b2b]
+- Updated dependencies [1373f4f12]
+- Updated dependencies [ab07d77f6]
+- Updated dependencies [96728a2af]
+- Updated dependencies [937ed39ce]
+- Updated dependencies [9a9e7a42f]
+- Updated dependencies [ac6025f63]
+- Updated dependencies [e292e393f]
+- Updated dependencies [479b29124]
+  - @backstage/cli@0.6.9
+  - @backstage/core@0.7.6
+  - @backstage/plugin-scaffolder@0.9.1
+  - @backstage/plugin-catalog@0.5.5
+  - @backstage/plugin-techdocs@0.8.0
+
 ## 0.2.24
 
 ### Patch Changes

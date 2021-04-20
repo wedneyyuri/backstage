@@ -1,5 +1,16 @@
 # @backstage/core
 
+## 0.7.6
+
+### Patch Changes
+
+- 99fbef232: Adding Headings for Accessibility on the Scaffolder Plugin
+- ab07d77f6: Add support for discovering plugins through the app element tree, removing the need to register them explicitly.
+- 937ed39ce: Exported SignInProviderConfig to strongly type SignInPage providers
+- 9a9e7a42f: Adding close button on support menu
+- Updated dependencies [ab07d77f6]
+  - @backstage/core-api@0.2.17
+
 ## 0.7.5
 
 ### Patch Changes

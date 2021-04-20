@@ -1,5 +1,17 @@
 # @backstage/plugin-scaffolder
 
+## 0.9.1
+
+### Patch Changes
+
+- 99fbef232: Adding Headings for Accessibility on the Scaffolder Plugin
+- cb0206b2b: Respect top-level UI schema keys in scaffolder forms. Allows more advanced RJSF features such as explicit field ordering.
+- Updated dependencies [99fbef232]
+- Updated dependencies [ab07d77f6]
+- Updated dependencies [937ed39ce]
+- Updated dependencies [9a9e7a42f]
+  - @backstage/core@0.7.6
+
 ## 0.9.0
 
 ### Minor Changes

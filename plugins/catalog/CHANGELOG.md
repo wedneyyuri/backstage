@@ -1,5 +1,16 @@
 # @backstage/plugin-catalog
 
+## 0.5.5
+
+### Patch Changes
+
+- 96728a2af: SystemDiagramCard UI improvements
+- Updated dependencies [99fbef232]
+- Updated dependencies [ab07d77f6]
+- Updated dependencies [937ed39ce]
+- Updated dependencies [9a9e7a42f]
+  - @backstage/core@0.7.6
+
 ## 0.5.4
 
 ### Patch Changes

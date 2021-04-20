@@ -1,5 +1,14 @@
 # @backstage/plugin-scaffolder-backend
 
+## 0.9.7
+
+### Patch Changes
+
+- 84c54474d: Forward user token to scaffolder task for subsequent api requests
+- Updated dependencies [d367f63b5]
+- Updated dependencies [b42531cfe]
+  - @backstage/backend-common@0.6.3
+
 ## 0.9.6
 
 ### Patch Changes
