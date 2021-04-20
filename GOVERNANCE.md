@@ -43,3 +43,11 @@ In general, we prefer that technical issues and maintainer membership are amicab
 # Adding new projects to the Backstage GitHub organization
 
 New projects will be added to the Backstage organization via GitHub issue discussion in one of the existing projects in the organization. Once sufficient discussion has taken place (~3-5 business days but depending on the volume of conversation), the maintainers of the project where the issue was opened (since different projects in the organization may have different maintainers) will decide whether the new project should be added. See the section above on voting if the maintainers cannot easily decide.
+
+# Reviewers
+
+The project also contains a team called [@backstage/reviewers](https://github.com/orgs/backstage/teams/reviewers). This is the group of people who are the fallback in [`CODEOWNERS`](./.github/CODEOWNERS). This team will typically contain the maintainers, and a small number of additional people who are permitted to approve and merge pull requests. The purpose of this group is to offload some of the review work from the maintainers, simplifying and speeding up the review process for contributors.
+
+This responsibility is distinct from the maintainer role. A reviewer must not approve and merge changes that have significant impact on architecture, design, or important programming contact surfaces. For that class of changes, a reviewer can still review the pull request without approving it, and is expected to notify `@backstage/maintainers` for final approval.
+
+Reviewers are added and removed through the conference of the maintainers and sponsors. This is meant to be a lightweight process, and implies a certain amount of trust.

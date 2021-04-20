@@ -29,3 +29,13 @@ People that have made significant contributions to the project and earned write 
 - David Tuite - Roadie (GitHub: [dtuite](https://github.com/dtuite))
 - Adam Harvey - DXC Technology (GitHub: [adamdmharvey](https://github.com/adamdmharvey))
 - Dominik Henneke - SDA SE (GitHub: [dhenneke](https://github.com/dhenneke))
+
+# Reviewers
+
+The project also contains a team called
+[@backstage/reviewers](https://github.com/orgs/backstage/teams/reviewers). This
+is the group of people who are the fallback in
+[`CODEOWNERS`](./.github/CODEOWNERS). It will typically contain the
+maintainers, and a number of additional people who are permitted to approve and
+merge pull requests. This responsibility is distinct from the maintainer role;
+see [`GOVERNANCE.md`](./GOVERNANCE.md) for the details of how this works.
